@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ErrorItemApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="user-btns">
+      <% if user_signed_in? %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user-btn" %>
+          <%= link_to "出品する", new_item_path , class: "user-btn" %>
+        <% if controller.controller_name == "items" && controller.action_name == "show" %>
+          <%= link_to "商品削除", item_path(@item) , method: :delete , class: "user-btn" %>
+          <%= link_to "商品編集", edit_item_path(@item), class: "user-btn" %>
+        <% end %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path , class: "user-btn" %>
+        <%= link_to "新規登録", new_user_registration_path , class: "user-btn" %>
+      <% end %>
+    </div>
+    <%= yield %>
+  </body>
+</html>

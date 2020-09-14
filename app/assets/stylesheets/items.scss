@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.user-btns {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.user-btn {
+  margin-right: 20px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333333;
+  border: 2px solid #333333;
+  padding: 0 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: #333333;
+    color: #ffffff;
+  }
+}
+
+.form-field {
+  margin-top: 20px;
+}
+
+.form-btn {
+  margin-top: 30px;
+}
+
+.item-theme {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.item-image {
+  &__src {
+    width: 300px;
+    height: 200px;
+  }
+}
+
+.item-container {
+  &__detail {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  &__price {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+
+   &__name {
+    font-size: 16px;
+   }
+}
+
+.item-details {
+  margin-top: 30px;
+}
+
+.item {
+  &__description {
+    display: flex;
+  }
+
+  &__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.item-name {
+  display: flex;
+  justify-content: center;
+  &__sentence {
+    font-size: 36px;
+  }
+}
+
+.item-description {
+  margin: 30px auto 0;
+  &__sentence {
+    font-size: 20px;
+  }
+}
