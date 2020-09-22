@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save!
+    if @item.save
       redirect_to root_path
     else
       render :new
@@ -20,11 +20,8 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
+    @item.update(item_params)
+    redirect_to root_path
   end
 
   def destroy

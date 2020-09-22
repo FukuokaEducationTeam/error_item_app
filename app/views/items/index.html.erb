@@ -1,21 +1,25 @@
 <div class="container">
   <div class="item-container">
     <h2 class="item-theme">新着商品一覧</h2>
-    <% @items.each do |item| %>
-      <%= link_to item_path(item) do %>
-        <div class="item-image">
-          <%= image_tag item.image , class: "item-image__src"%>
+    <% if @items.present? %>
+      <% @items.each do |item| %>
+        <%= link_to item_path do %>
+          <div class="item-image">
+            <%= image_tag item.image , class: "item-image__src"%>
+          </div>
+        <% end %>
+        <div class="item-container__detail">
+          <div class="item-container__name">
+            <%= item.name %>
+          </div>
+
+          <div class="item-container__price">
+            <%= item.price %>円
+          </div>
         </div>
       <% end %>
-      <div class="item-container__detail">
-        <div class="item-container__name">
-          <%= item.name %>
-        </div>
-
-        <div class="item-container__price">
-          <%= item.price %>円
-        </div>
-      </div>
+    <% else %>
+      <p>まだ商品はありません</p>
     <% end %>
   </div>
 </div>
