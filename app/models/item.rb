@@ -25,6 +25,6 @@ class Item < ApplicationRecord
     validates :prefecture
   end
 
-  validates :price, numericality: { less_than: 9999999, greater_than: 299, message: "300 ~ 9999999の間で価格を入力してください" }
+  validates :price, numericality: { greater_than: 9999999, less_than: 300, message: "300 ~ 9999999の間で価格を入力してください" }
 
 end
